@@ -1,6 +1,10 @@
 import Ember from 'ember';
 import TypeClass from 'ember-bootstrap/mixins/type-class';
 import SizeClass from 'ember-bootstrap/mixins/size-class';
+import TooltipMixin from 'ember-bootstrap/mixins/tooltip-support';
+import PopoverMixin from 'ember-bootstrap/mixins/popover-support';
+
+
 
 /**
  Implements a HTML button element, with support for all [Bootstrap button CSS styles](http://getbootstrap.com/css/#buttons)
@@ -72,7 +76,7 @@ import SizeClass from 'ember-bootstrap/mixins/size-class';
  @uses Bootstrap.TypeClass
  @uses Bootstrap.SizeClass
 */
-export default Ember.Component.extend(TypeClass, SizeClass, {
+export default Ember.Component.extend(TooltipMixin, PopoverMixin, TypeClass, SizeClass, {
     tagName: 'button',
 
     /**
