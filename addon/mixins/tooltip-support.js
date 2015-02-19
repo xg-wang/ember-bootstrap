@@ -29,6 +29,6 @@ export default Ember.Mixin.create({
     attributeBindings: ['tabindex'],
     tabindex: null,
 
-    _createPluginOnInsert: Ember.on('didInsertElement', createPlugin),
-    _createPluginOnTitleChange: Ember.observer('tooltipTitle', createPlugin)
+    _createTooltipOnInsert: Ember.on('didInsertElement', createPlugin),
+    _createTooltipOnTitleChange: Ember.observer('tooltipTitle', createPlugin)
 });
