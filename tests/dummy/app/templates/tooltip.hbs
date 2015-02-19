@@ -1,0 +1,27 @@
+<h1>Tooltips and Popovers</h1>
+
+<h2>Tooltips</h2>
+
+<p>This is a {{#bs-tooltip tagName="a" tooltipTitle="Just an example"}}tooltip{{/bs-tooltip}}, configured by component properties.</p>
+<p>This is a {{#bs-tooltip tagName="a" tooltip=tooltipConfig}}tooltip{{/bs-tooltip}}, configured by an object.</p>
+
+<p>This is a {{#bs-tooltip tagName="a" tooltipTitle=tooltipTitle}}tooltip{{/bs-tooltip}} with dynamic title.
+Title: {{input type="text" value=tooltipTitle}}</p>
+
+<p>This is a <code>bs-button</code>, which has tooltip support:
+{{#bs-button tooltipTitle="I support tooltips out of the box!" tootltipPlacement="right"}}Hover me{{/bs-button}}
+</p>
+
+
+<h2>Popovers</h2>
+
+<p>This is a {{#bs-popover tagName="a" popoverTitle="I am a popover" popoverContent="and I am prooud of it!" popoverTrigger="focus" tabindex="0"}}popover{{/bs-popover}}</p>
+<p>This is a {{#bs-popover tagName="a" popover=popoverConfig}}popover{{/bs-popover}}, configured by an object.</p>
+
+<p>This is a {{#bs-popover tagName="a" popoverTitle=popoverTitle popoverContent=popoverContent}}popover{{/bs-popover}} with dynamic content.
+    Title: {{input type="text" value=popoverTitle}}, Content: {{input type="text" value=popoverContent}}</p>
+
+<p>This is a <code>bs-button</code>, which has popover support:
+    {{#bs-button popoverTitle="Buttons..." popoverContent="... support popovers out of the box!" popoverTrigger="hover focus" popoverPlacement="right"}}Hover me{{/bs-button}}
+</p>
+

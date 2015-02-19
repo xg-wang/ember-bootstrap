@@ -13,6 +13,7 @@ Router.map(function() {
 
     this.route('forms');
     this.route('dropdown');
+    this.route('tooltip');
 });
 
 export default Router;

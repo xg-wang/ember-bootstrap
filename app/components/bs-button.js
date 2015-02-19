@@ -1,4 +1,4 @@
 import Ember from 'ember';
-import bsButton from 'ember-bootstrap/components/bs-button';
+import component from 'ember-bootstrap/components/bs-button';
 
-export default bsButton;
+export default component;

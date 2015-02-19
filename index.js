@@ -43,9 +43,9 @@ module.exports = {
             app.import(path.join(bootstrapPath, 'fonts/glyphicons-halflings-regular.woff'), { destDir: '/fonts' });
         }
 
-
-        // Import transition support
         app.import(path.join(app.bowerDirectory, 'bootstrap/js/transition.js'));
+        app.import(path.join(app.bowerDirectory, 'bootstrap/js/tooltip.js'));
+        app.import(path.join(app.bowerDirectory, 'bootstrap/js/popover.js'));
         app.import(path.join(app.bowerDirectory, 'bootstrap/js/modal.js'));
 
     }
