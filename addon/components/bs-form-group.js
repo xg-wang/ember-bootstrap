@@ -1,4 +1,6 @@
 import Ember from 'ember';
+import TooltipMixin from 'ember-bootstrap/mixins/tooltip-support';
+import PopoverMixin from 'ember-bootstrap/mixins/popover-support';
 
 /**
  This component renders a `<div class="form-group">` element, with support for validation states and feedback icons.
@@ -6,8 +8,8 @@ import Ember from 'ember';
 
  ```hbs
  \{{#bs-form-group validation=firstNameValidation}}
-    <label class="control-label">First name</label>
-    \{{bs-input type="text" value=firstname}}
+ <label class="control-label">First name</label>
+ \{{bs-input type="text" value=firstname}}
  \{{/bs-form-group}}
  ```
 
@@ -18,8 +20,8 @@ import Ember from 'ember';
  @class FormGroup
  @namespace Bootstrap
  @extends Ember.Component
-*/
-export default Ember.Component.extend({
+ */
+export default Ember.Component.extend(TooltipMixin,PopoverMixin,{
 
     classNames: ['form-group'],
     classNameBindings: ['validationClass','hasFeedback'],
