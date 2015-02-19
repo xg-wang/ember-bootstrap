@@ -7,7 +7,8 @@ var defaults = {
     popoverPlacement: 'top',
     popoverTrigger: 'click',
     popoverViewport: { selector: 'body', padding: 0 },
-    popoverAnimation: true
+    popoverAnimation: true,
+    popoverHtml: false
 };
 
 function createPlugin() {
@@ -24,6 +25,7 @@ function createPlugin() {
         trigger: getProperty(this, 'popoverTrigger', 'popover', defaults),
         viewport: getProperty(this, 'popoverViewport', 'popover', defaults),
         animation: getProperty(this, 'popoverAnimation', 'popover', defaults),
+        html: getProperty(this, 'popoverHtml', 'popover', defaults)
     });
 }
 
