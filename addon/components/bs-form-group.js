@@ -64,6 +64,7 @@ export default Ember.Component.extend(TooltipMixin,PopoverMixin,{
      *
      * @property successIcon
      * @type string
+     * @default 'glyphicon glyphicon-ok'
      * @public
      */
     successIcon: 'glyphicon glyphicon-ok',
