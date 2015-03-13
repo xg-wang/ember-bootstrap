@@ -16,6 +16,7 @@ Router.map(function() {
     this.route('tooltip');
     this.route('alert');
    this.route('listgroup');
+    this.route('accordion');
 });
 
 export default Router;
