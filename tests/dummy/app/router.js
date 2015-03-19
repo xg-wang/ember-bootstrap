@@ -15,7 +15,7 @@ Router.map(function() {
     this.route('dropdown');
     this.route('tooltip');
     this.route('alert');
-   this.route('listgroup');
+    this.route('listgroup');
     this.route('accordion');
 });
 
