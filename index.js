@@ -48,5 +48,9 @@ module.exports = {
         app.import(path.join(app.bowerDirectory, 'bootstrap/js/popover.js'));
         app.import(path.join(app.bowerDirectory, 'bootstrap/js/modal.js'));
 
+    },
+
+    isDevelopingAddon: function() {
+        return true;
     }
 };
