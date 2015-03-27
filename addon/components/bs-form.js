@@ -103,6 +103,9 @@ export default Ember.Component.extend({
      */
     hasValidator: Ember.computed.notEmpty('model.validate'),
 
+
+    horizontalLabelGridClass: 'col-md-2',
+
     /**
      * An array of `Bootstrap.FormElement`s that are children of this form.
      *
