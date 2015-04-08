@@ -13,6 +13,7 @@ Router.map(function() {
 
     this.route('forms');
     this.route('dropdown');
+    this.route('button');
     this.route('tooltip');
     this.route('alert');
     this.route('listgroup');
