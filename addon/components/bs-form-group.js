@@ -1,6 +1,4 @@
 import Ember from 'ember';
-import TooltipMixin from 'ember-bootstrap/mixins/tooltip-support';
-import PopoverMixin from 'ember-bootstrap/mixins/popover-support';
 import Config from 'ember-bootstrap/config';
 
 /**
@@ -8,10 +6,10 @@ import Config from 'ember-bootstrap/config';
  Use as a block level component:
 
  ```hbs
- \{{#bs-form-group validation=firstNameValidation}}
- <label class="control-label">First name</label>
- \{{bs-input type="text" value=firstname}}
- \{{/bs-form-group}}
+ {{#bs-form-group validation=firstNameValidation}}
+    <label class="control-label">First name</label>
+    {{bs-input type="text" value=firstname}}
+ {{/bs-form-group}}
  ```
 
  If the `validation` property is set to some state (usually Bootstrap's predefined states "success",
@@ -19,10 +17,10 @@ import Config from 'ember-bootstrap/config';
  See http://getbootstrap.com/css/#forms-control-validation
 
  @class FormGroup
- @namespace Bootstrap
+ @namespace Components
  @extends Ember.Component
- */
-export default Ember.Component.extend(TooltipMixin,PopoverMixin,{
+*/
+export default Ember.Component.extend({
 
     classNames: ['form-group'],
     classNameBindings: ['validationClass','hasFeedback'],
@@ -56,7 +54,7 @@ export default Ember.Component.extend(TooltipMixin,PopoverMixin,{
      * @public
      * @readonly
      */
-    hasFeedback: Ember.computed.and('hasValidation','useIcons','iconName'),
+    hasFeedback: Ember.computed.and('hasValidation','useIcons','hasIconForValidationState'),
 
     /**
      * The icon classes to be used for a feedback icon in a "success" validation state.
@@ -155,6 +153,8 @@ export default Ember.Component.extend(TooltipMixin,PopoverMixin,{
         var validation = this.get('validation') || 'success';
         return this.get(validation + 'Icon');
     }),
+
+    hasIconForValidationState: Ember.computed.notEmpty('iconName'),
 
     /**
      * Set to a validation stat to render the form-group with a validation style.
