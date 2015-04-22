@@ -14,8 +14,10 @@ function createPlugin() {
         return;
     }
 
+    var containerElement = typeof this.container !== 'undefined' ? this.container.lookup('application:main').get('rootElement') : 'body';
+
     this.$().tooltip({
-        container: 'body',
+        container: containerElement,
         title: getPropertyFn(this, 'tooltipTitle', 'tooltip', defaults),
         delay: getProperty(this, 'tooltipDelay', 'tooltip', defaults),
         placement: getPropertyFn(this, 'tooltipPlacement', 'tooltip', defaults),
@@ -29,6 +31,6 @@ export default Ember.Mixin.create({
     attributeBindings: ['tabindex'],
     tabindex: null,
 
-    _createPluginOnInsert: Ember.on('didInsertElement', createPlugin),
-    _createPluginOnTitleChange: Ember.observer('tooltipTitle', createPlugin)
+    _createTooltipOnInsert: Ember.on('didInsertElement', createPlugin),
+    _createTooltipOnTitleChange: Ember.observer('tooltipTitle', createPlugin)
 });

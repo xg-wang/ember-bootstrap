@@ -7,7 +7,8 @@ var defaults = {
     popoverPlacement: 'top',
     popoverTrigger: 'click',
     popoverViewport: { selector: 'body', padding: 0 },
-    popoverAnimation: true
+    popoverAnimation: true,
+    popoverHtml: false
 };
 
 function createPlugin() {
@@ -15,8 +16,10 @@ function createPlugin() {
         return;
     }
 
+    var containerElement = typeof this.container !== 'undefined' ? this.container.lookup('application:main').get('rootElement') : 'body';
+
     this.$().popover({
-        container: 'body',
+        container: containerElement,
         title: getPropertyFn(this, 'popoverTitle', 'popover', defaults),
         content: getPropertyFn(this, 'popoverContent', 'popover', defaults),
         delay: getProperty(this, 'popoverDelay', 'popover', defaults),
@@ -24,6 +27,7 @@ function createPlugin() {
         trigger: getProperty(this, 'popoverTrigger', 'popover', defaults),
         viewport: getProperty(this, 'popoverViewport', 'popover', defaults),
         animation: getProperty(this, 'popoverAnimation', 'popover', defaults),
+        html: getProperty(this, 'popoverHtml', 'popover', defaults)
     });
 }
 
@@ -32,6 +36,6 @@ export default Ember.Mixin.create({
     attributeBindings: ['tabindex'],
     tabindex: null,
 
-    _createPluginOnInsert: Ember.on('didInsertElement', createPlugin),
-    _createPluginOnTitleChange: Ember.observer('tooltipTitle', createPlugin)
+    _createPopoverOnInsert: Ember.on('didInsertElement', createPlugin),
+    _createPopoverOnTitleChange: Ember.observer('tooltipTitle', createPlugin)
 });
