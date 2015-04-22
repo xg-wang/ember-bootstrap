@@ -102,9 +102,6 @@ export default Ember.Component.extend({
      */
     hasValidator: Ember.computed.notEmpty('model.validate'),
 
-
-    horizontalLabelGridClass: 'col-md-2',
-
     /**
      * The Bootstrap grid class for form labels. This is used by the `Components.FormElement` class as a default for the
      * whole form.
