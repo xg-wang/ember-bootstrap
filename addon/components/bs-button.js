@@ -1,9 +1,9 @@
 import Ember from 'ember';
 import TypeClass from 'ember-bootstrap/mixins/type-class';
 import SizeClass from 'ember-bootstrap/mixins/size-class';
-import I18nSupport from 'ember-bootstrap/mixins/i18n-support';
 import TooltipMixin from 'ember-bootstrap/mixins/tooltip-support';
 import PopoverMixin from 'ember-bootstrap/mixins/popover-support';
+import I18nSupport from 'ember-bootstrap/mixins/i18n-support';
 
 
 
@@ -86,7 +86,7 @@ import PopoverMixin from 'ember-bootstrap/mixins/popover-support';
  @uses Mixins.SizeClass
  @uses Mixins.I18nSupport
 */
-export default Ember.Component.extend(TooltipMixin, PopoverMixin, TypeClass, SizeClass, I18nSupport, {
+export default Ember.Component.extend(TooltipMixin, PopoverMixin, I18nSupport, TypeClass, SizeClass, {
     tagName: 'button',
     classNames: ['btn'],
     classNameBindings: ['active', 'block:btn-block'],
@@ -178,18 +178,6 @@ export default Ember.Component.extend(TooltipMixin, PopoverMixin, TypeClass, Siz
      * @public
      */
     iconInactive: null,
-
-    /**
-     * Property for type styling
-     *
-     * For the available types see the [Bootstrap docs](http://getbootstrap.com/css/#buttons-options) (use without "btn-" prefix)
-     * A button has the default type 'default'.
-     *
-     * @property type
-     * @type String
-     * @default 'default'
-     */
-    type: 'default',
 
     /**
      * Class(es) (e.g. glyphicons or font awesome) to use as a button icon
