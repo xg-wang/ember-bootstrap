@@ -12,7 +12,7 @@ var defaults = {
 };
 
 function createPlugin() {
-    if (Ember.isBlank(getProperty(this, 'popoverTitle', 'popover', defaults))) {
+    if (this._state !== 'inDOM' || Ember.isBlank(getProperty(this, 'popoverTitle', 'popover', defaults))) {
         return;
     }
 
@@ -37,5 +37,5 @@ export default Ember.Mixin.create({
     tabindex: null,
 
     _createPopoverOnInsert: Ember.on('didInsertElement', createPlugin),
-    _createPopoverOnTitleChange: Ember.observer('tooltipTitle', createPlugin)
+    _createPopoverOnTitleChange: Ember.observer('popoverTitle', createPlugin)
 });
