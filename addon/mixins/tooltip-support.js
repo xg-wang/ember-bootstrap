@@ -10,7 +10,7 @@ var defaults = {
 };
 
 function createPlugin() {
-    if (Ember.isBlank(getProperty(this, 'tooltipTitle', 'tooltip', defaults))) {
+    if (this._state !== 'inDOM' || Ember.isBlank(getProperty(this, 'tooltipTitle', 'tooltip', defaults))) {
         return;
     }
 
