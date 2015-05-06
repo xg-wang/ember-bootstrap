@@ -120,6 +120,19 @@ export default Ember.Component.extend(TooltipMixin, PopoverMixin, I18nSupport, T
      */
     disabled: false,
 
+
+    /**
+     * Property for type styling
+     *
+     * For the available types see the [Bootstrap docs](http://getbootstrap.com/css/#buttons-options) (use without prefix, e.g. only "warning")
+     *
+     * @property type
+     * @type String
+     * @default 'default'
+     * @public
+     */
+    type: 'default',
+
     /**
      * Set the type of the button, either 'button' or 'submit'
      *
