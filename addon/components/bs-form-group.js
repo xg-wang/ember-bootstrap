@@ -1,5 +1,7 @@
 import Ember from 'ember';
 import Config from 'ember-bootstrap/config';
+import TooltipMixin from 'ember-bootstrap/mixins/tooltip-support';
+import PopoverMixin from 'ember-bootstrap/mixins/popover-support';
 
 /**
  This component renders a `<div class="form-group">` element, with support for validation states and feedback icons.
@@ -20,7 +22,7 @@ import Config from 'ember-bootstrap/config';
  @namespace Components
  @extends Ember.Component
 */
-export default Ember.Component.extend({
+export default Ember.Component.extend(TooltipMixin, PopoverMixin, {
 
     classNames: ['form-group'],
     classNameBindings: ['validationClass','hasFeedback'],
