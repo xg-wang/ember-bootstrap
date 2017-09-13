@@ -660,7 +660,7 @@ export default FormGroup.extend({
   useIcons: computed.equal('controlComponent', 'bs-form/element/control/input'),
 
   /**
-   * The form layout used for the markup generation (see http://getbootstrap.com/css/#forms):
+   * The form layout used for the markup generation (see https://getbootstrap.com/docs/3.3/css/#forms):
    *
    * * 'horizontal'
    * * 'vertical'
@@ -713,7 +713,7 @@ export default FormGroup.extend({
    * @private
    */
   layoutComponent: computed('formLayout', 'controlType', function() {
-    let formLayout = this.get('formLayout');
+    let formLayout = this.getWithDefault('formLayout', 'vertical');
     let controlType = this.get('controlType');
 
     if (nonDefaultLayouts.includes(controlType)) {
